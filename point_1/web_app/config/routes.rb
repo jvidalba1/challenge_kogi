@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get 'follow'
     end
     resources :posts do 
-      resources :comments, only: [:create, :new, :edit, :update]
+      resources :comments, only: [:create, :new, :edit, :update, :destroy]
     end
   end
 

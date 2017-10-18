@@ -7,7 +7,7 @@
         <th>
           <% if comment.user === current_user %>
             <%= link_to "Edit", edit_user_post_comment_path(@user, post, comment) %>
-            <%= link_to "Delete", edit_user_post_comment_path(@user, post, comment), class: "btn-danger" %>
+            <%= link_to "Delete", user_post_comment_path(@user, post, comment), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-danger" %>
           <% end %>
         </th>
       </tr>
