@@ -4,33 +4,33 @@ Todos los Posts
 GET /posts
 
 Todos los Autores
-GET /autores
+GET /authors
 
 Todos los Posts de un Autor
-GET /autores/:autor_id/posts
+GET /authors/:author_id/posts
 
 Todos los Comentarios de un Post
-GET /posts/:post_id/comentarios
+GET /posts/:post_id/comments
 
 Todos los Comentarios de un Autor
-GET /autores/:autor_id/comentarios
+GET /authors/:author_id/comments
 
 Crear un Post
 POST /posts
 
 Crear un Comentario de un Post
-POST /posts/:post_id/comentarios
+POST /posts/:post_id/comments
 
 Actualizar un Post
 PUT    /posts/:post_id
 PATCH  /posts/:post_id 
 
 Actualizar un Comentario
-PUT    /comentarios/:comentario_id
-PATCH  /comentarios/:comentario_id 
+PUT    /comments/:comment_id
+PATCH  /comments/:comment_id 
 
 Eliminar un Comentario
-DELETE /comentario/:comentario_id
+DELETE /comments/:comment_id
 
 Eliminar un Autor
-DELETE /autor/:autor_id
+DELETE /authors/:author_id
