@@ -15,3 +15,16 @@ class RepeatedString
   end
 end
 
+####################
+# EXEC
+####################
+puts "Simple example with three strings: \n"
+list = []
+3.times do |n|
+  puts "Write your string ##{n+1}: "
+  list << gets.chomp
+end
+puts "List => #{list}"
+
+rs = RepeatedString.new(list)
+puts "Solution: #{rs.solution}"
