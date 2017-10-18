@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Versions
+* Ruby version => 2.3.1
+* Rails version => 5.1.4
 
-Things you may want to cover:
+### Install development environtment
+- Download or clone repository with the options provided by Github
 
-* Ruby version
+- Create database
+> rake db:create
 
-* System dependencies
+- Run migrations
+> rake db:migrate
 
-* Configuration
+- Populate database with fake data
+> rake db:seed
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Run server
+> rails server
