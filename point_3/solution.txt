@@ -1,0 +1,36 @@
+Dados los siguientes Recursos, elabora sus rutas REST (con métodos HTTP) equivalentes:
+
+Todos los Posts
+GET /posts
+
+Todos los Autores
+GET /autores
+
+Todos los Posts de un Autor
+GET /autores/:autor_id/posts
+
+Todos los Comentarios de un Post
+GET /posts/:post_id/comentarios
+
+Todos los Comentarios de un Autor
+GET /autores/:autor_id/comentarios
+
+Crear un Post
+POST /posts
+
+Crear un Comentario de un Post
+POST /posts/:post_id/comentarios
+
+Actualizar un Post
+PUT    /posts/:post_id
+PATCH  /posts/:post_id 
+
+Actualizar un Comentario
+PUT    /comentarios/:comentario_id
+PATCH  /comentarios/:comentario_id 
+
+Eliminar un Comentario
+DELETE /comentario/:comentario_id
+
+Eliminar un Autor
+DELETE /autor/:autor_id
