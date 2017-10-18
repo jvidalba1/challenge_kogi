@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-12">
+    <h3>Timeline <%= @user.email %> <%= render 'partials/follow', user: @user %> <%= %></h3>      
+    <% if @posts.empty? %>
+      <h3>There are no posts yet</h3>
+      <% if current_user === @user %>
+        <%= link_to "Create your first post", new_user_post_path, class: "btn btn-lg btn-default" %>
+      <% end %>
+    <% else %>
+      <span>
+        <% if current_user === @user %>
+          <%= link_to "Create post", new_user_post_path, class: "btn btn-lg btn-default", style: "float: right" %>  
+        <% end %>
+      </span>
+      <table class="table table-striped" style="table-layout:fixed">
+        <thead>
+          <tr>
+            <th colspan="3">Body</th>
+            <th>Created date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @posts.each do |post| %>
+            <tr>
+              <td colspan="3"><%= post.body[0, 100] + "..."%></td>
+              <td><%= post.created_at.strftime("%B %d, %Y") %></td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group">
+                  <%= link_to "View", user_post_path(@user, post), class: "btn btn-default" %>
+                  <% if current_user === @user %>
+                    <%= link_to "Edit", edit_user_post_path(current_user, post), class: "btn btn-default" %>
+                    <%= link_to "Delete", user_post_path(current_user, post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+                  <% end %>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>

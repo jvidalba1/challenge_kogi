@@ -1,0 +1,28 @@
+<%# raise "eoelo" %>
+<%= form_for([current_user, @post]) do |f| %>
+  <div class="row">
+    <div class="col-md-12">
+      <% if post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+          <ul>
+            <% post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">  
+        <%= f.text_area :body, size: "20x10", class: "form-control", placeholder: "Body text" %>
+      </div>
+    </div>  
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit", class: "btn btn-lg btn-default" %>
+  </div>
+<% end %>

@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-9 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row" style="text-align: right">
+            <div class="col-md-12">
+              <span><%= @post.created_at.strftime("%B %d, %Y") %></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h3>By: <%= @user.email %></h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <p>
+                <%= simple_format(@post.body) %>
+              </p>
+            </div>
+          </div>
+          <div style="text-align: right">
+            <% if current_user === @user %>
+              <%= link_to 'Edit', edit_user_post_path(@user, @post) %> |
+            <% end %>
+            <%= link_to 'Timeline', user_posts_path(@user) %>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-9 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-md-12">
+              <%= render partial: "comments/form", locals: { post: @post } %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h4>Comments(<%= @post.comments.count %>)</h4>
+              <%= render partial: "comments/comments", locals: { post: @post } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+</div>
+

@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-9 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1>New post</h1>
+          <%= render 'form', post: @post %>
+
+          <div style="text-align: right">
+            <%= link_to 'Back', user_posts_path %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
